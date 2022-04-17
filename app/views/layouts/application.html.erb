@@ -5,12 +5,21 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_pack_tag 'application' %>
   </head>
-
   <body>
+    <nav>
+      <h3><%= link_to 'LOGO', root_path %></h3>
+      <% if employee_signed_in?%>
+        <%= link_to 'Log out', destroy_employee_session_path, method: :delete %>
+      <% else %>
+        <%= link_to 'Sign in', new_employee_session_path %>
+        <%= link_to 'Sign up', new_employee_registration_path %>
+      <% end %>
+    </nav>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 </html>

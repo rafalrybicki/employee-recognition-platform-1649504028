@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :employee do
+  factory :kudo do
     title { Faker::Lorem.sentence }
     content { Faker::Lorem.sentences(number: 5) }
     giver { factory :employee }

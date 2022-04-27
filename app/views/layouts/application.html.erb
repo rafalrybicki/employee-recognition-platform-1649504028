@@ -12,7 +12,7 @@
     <nav>
       <h3><%= link_to 'LOGO', root_path %></h3>
       <% if employee_signed_in?%>
-        <%= link_to 'Log out', destroy_employee_session_path, method: :delete %>
+        <%= link_to 'Log out', destroy_employee_session_path %>
       <% else %>
         <%= link_to 'Sign in', new_employee_session_path %>
         <%= link_to 'Sign up', new_employee_registration_path %>
